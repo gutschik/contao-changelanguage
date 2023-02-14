@@ -76,6 +76,7 @@ abstract class AbstractNavigationListener
         );
 
         if (null === $translated) {
+            $event->getUrlParameterBag()->removeUrlAttribute($this->getUrlKey());
             $navigationItem->setIsDirectFallback(false);
 
             return;
