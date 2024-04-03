@@ -56,6 +56,7 @@ abstract class AbstractNavigationListener
 
         // Abort if current record has no translated version
         if (0 === $mainId || 0 === $masterId) {
+            $event->getUrlParameterBag()->removeUrlAttribute($this->getUrlKey());
             $navigationItem->setIsDirectFallback(false);
 
             return;
